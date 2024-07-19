@@ -1,0 +1,609 @@
+body {
+  margin: 0;
+  font-family: 'Aleo';
+  overflow-y: hidden;
+}
+.background {
+  height: 100vh;
+  position: relative;
+  overflow-y: hidden;
+}
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(61, 59, 64, 0.7);
+  opacity: 0;
+  animation: ani 2.5s forwards;
+  /* z-index: 100; */
+}
+.logo {
+  width: 190px;
+  height: 50px;
+  margin: 10px 40px 0;
+}
+
+.title {
+  position: absolute;
+  top: 19%;
+  right: 2%;
+  z-index: 90;
+  font-size: 55px;
+  font-weight: 600;
+  color: #fff;
+  text-align: right;
+  text-shadow: 5px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.subtitle {
+  position: absolute;
+  top: 15%;
+  right: 2%;
+  z-index: 90;
+  font-size: 38px;
+  font-weight: 400;
+  color: #fff;
+  text-align: right;
+  text-shadow: 3px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.background-image {
+  background-image: url(/img/фон.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+.background-figure1 {
+  display: inline-block;
+  border-top: 90rem solid rgb(53, 52, 50);
+  border-left: 70rem solid transparent;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.background-figure2 {
+  display: inline-block;
+  border-top: 100rem solid rgb(53, 52, 50, 0.6);
+  border-left: 80rem solid transparent;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.background-figure3 {
+  display: inline-block;
+  border-top: 110rem solid rgb(53, 52, 50, 0.3);
+  border-left: 90rem solid transparent;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.background-figure {
+  opacity: 0;
+  animation: ani 2.5s forwards;
+}
+@keyframes ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Кнопка */
+.boton {
+  width: 200px;
+  height: 50px;
+  margin: 100px auto;
+  display: block;
+  position: absolute;
+  top: 30%;
+  right: 2%;
+}
+
+.botontext {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  text-align: center;
+  line-height: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.twist {
+  display: block;
+  height: 100%;
+  width: 25%;
+  position: relative;
+  float: left;
+  margin-left: -4px;
+}
+
+.twist:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #fed5a9;
+  bottom: 100%;
+  position: absolute;
+  transform-origin: center bottom 0px;
+  transform: matrix3d(1, 0, 0, 0, 0, 0, -1, -0.003, 0, 1, 0, 0, 0, 0, 0, 1);
+
+  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995); /* custom */
+}
+
+.twist:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  height: 100%;
+  background: #9f7f5e;
+  transform-origin: center top 0px;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.003, 0, -50, 0, 1);
+
+  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995); /* custom */
+}
+
+.boton:hover .twist:before {
+  background: #fff;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0.003, 0, 50, 0, 1);
+}
+
+.boton:hover .twist:after {
+  background: #dedae1;
+  transform: matrix3d(1, 0, 0, 0, 0, 0, -1, 0.003, 0, 1, 0, 0, 0, 0, 0, 1);
+}
+
+.boton .twist:nth-of-type(1) {
+  margin-left: 0;
+}
+
+.boton .twist:nth-of-type(1):before,
+.boton .twist:nth-of-type(1):after {
+  transition-delay: 0s;
+}
+
+.boton .twist:nth-of-type(2):before,
+.boton .twist:nth-of-type(2):after {
+  transition-delay: 0.1s;
+}
+
+.boton .twist:nth-of-type(3):before,
+.boton .twist:nth-of-type(3):after {
+  transition-delay: 0.2s;
+}
+
+.boton .twist:nth-of-type(4):before,
+.boton .twist:nth-of-type(4):after {
+  transition-delay: 0.3s;
+}
+
+.boton .botontext:nth-of-type(1) {
+  color: #3d3b40;
+  bottom: 100%;
+  transform-origin: center bottom 0px;
+  transform: matrix3d(1, 0, 0, 0, 0, 0, -1, -0.003, 0, 1, 0, 0, 0, 0, 0, 1);
+
+  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995); /* custom */
+}
+
+.boton:hover .botontext:nth-of-type(1) {
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0.003, 0, 50, 0, 1);
+}
+
+.boton .botontext:nth-of-type(2) {
+  color: #fff;
+  top: 100%;
+  transform-origin: center top 0px;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.003, 0, -50, 0, 1);
+
+  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995); /* custom */
+}
+
+.boton:hover .botontext:nth-of-type(2) {
+  transform: matrix3d(1, 0, 0, 0, 0, 0, -1, 0.003, 0, 1, 0, 0, 0, 0, 0, 1);
+}
+
+.main {
+  background-color: #f4f4f4;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+/*MENU*/
+
+.square {
+  border: 1px solid #9f7f5e;
+  height: 33px;
+  width: 33px;
+  display: block;
+  margin: 20px auto;
+  transform: rotate(45deg);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 18px;
+
+  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995); /* custom */
+}
+
+.square .burgerwrap {
+  height: 18px;
+  width: 21px;
+  transform: rotate(-45deg);
+  padding-left: 5px;
+  padding-top: 11px;
+
+  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995); /* custom */
+}
+
+.square:hover {
+  transform: rotate(135deg);
+  border: 1px solid #fff;
+}
+
+.square:hover .burgerwrap {
+  transform: rotate(-135deg);
+}
+
+.square span {
+  height: 3px;
+  width: 18px;
+  background: #9f7f5e;
+  display: block;
+  margin-bottom: 2px;
+
+  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995); /* custom */
+}
+
+.square span:after {
+  content: "";
+  height: 2px;
+  width: 14px;
+  position: absolute;
+  background: #fff;
+  left: -24px;
+
+  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995); /* custom */
+}
+
+.square:hover span {
+  margin-left: 33px;
+}
+
+.square:hover span:after {
+  left: 1px;
+}
+
+.square span:nth-of-type(1),
+.square span:nth-of-type(1):after {
+  transition-delay: 0.1s;
+}
+
+.square span:nth-of-type(2),
+.square span:nth-of-type(2):after {
+  transition-delay: 0.2s;
+}
+
+.square span:nth-of-type(3),
+.square span:nth-of-type(3):after {
+  transition-delay: 0.3s;
+}
+
+/* Бургер меню*/
+.menu {
+  background-color: rgb(53, 52, 50);
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 70px;
+  height: 100%;
+  margin: 0;
+  list-style: none;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  transition-duration: 0.25s;
+}
+
+.nav {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  top: 0;
+  left: 70px;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  width: 350px;
+  background: rgb(255, 255, 255);
+  box-shadow: 2px 2px 6px rgba(88, 88, 88, 0.4);
+}
+.showMenu {
+  transform: translateY(0);
+  z-index: 100;
+}
+.nav__list {
+  margin: 0;
+  padding: 2rem 1rem 0;
+  list-style: none;
+  color: #000000;
+}
+
+.nav__item {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.nav__menu {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.nav__menu li:hover {
+  color: #9f7f5e;
+}
+.nav__item a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.nav__item a:hover {
+  color: #9f7f5e;
+}
+
+.nav__item-list {
+  list-style: none;
+  margin-top: 10px;
+  display: none;
+  cursor: pointer;
+}
+.visible {
+  display: block;
+}
+.main__header {
+  /* margin-top: 30px; */
+  width: 100%;
+  height: 20rem;
+}
+.slide {
+  width: 100%;
+  height: 100%;
+  background-image: url("/img/фон3.png");
+  background-size: cover;
+  border-bottom: 2px solid #000;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: end;
+}
+.slide__title {
+  color: #fff;
+  font-size: 40px;
+  text-shadow: rgb(0, 0, 0) 1.5px 1px;
+  z-index: 10;
+}
+.figure1 {
+  display: inline-block;
+  border-top: 20rem solid rgb(53, 52, 50, 0.6);
+  border-left: 40rem solid transparent;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 8;
+}
+
+.main__part {
+  /* width: 100%; */
+  margin-left: 70px;
+  height: 93%;
+}
+.main-title {
+  text-align: center;
+  padding: 15px;
+  margin: 0;
+  font-size: 40px;
+  text-shadow: rgb(124, 124, 124) 1.5px 1px;
+  text-transform: uppercase;
+}
+.section {
+  /* width: 1500px; */
+  display: flex;
+  flex-direction: row;
+  margin: 0 270px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.section-wrapper {
+  display: inline-block;
+  overflow: hidden;
+}
+.section-img {
+  width: 300px;
+  height: 300px;
+  filter: brightness(80%);
+  transition: 1s;
+  display: block;
+}
+.section-img:hover {
+  transform: scale(1.2);
+}
+
+
+.main-container {
+  overflow: hidden;
+  padding: 20px 20px 60px;
+  /* margin-top: 2em; */
+  /* background: rgba(0, 0, 0, 0.1); */
+}
+
+.card-carousel {
+  --card-width: 100%;
+  --card-max-width: 450px;
+  --card-height: 600px;
+  --carousel-min-width: 600px;
+  z-index: 1;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: var(--card-height);
+  min-width: var(--carousel-min-width);
+  transition: filter 0.3s ease;
+}
+
+@media screen and (max-width: 640px) {
+  .card-carousel {
+    margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2);
+  }
+}
+
+.card-carousel.smooth-return {
+  transition: all 0.2s ease;
+}
+
+.card-carousel .card {
+  background: whitesmoke;
+  width: var(--card-width);
+  max-width: var(--card-max-width);
+  text-align: center;
+  padding: 1em;
+  min-width: 250px;
+  height: var(--card-height);
+  position: absolute;
+  margin: 0 auto;
+  color: rgba(0, 0, 0, 0.5);
+  transition: inherit;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 1em;
+  filter: brightness(0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #7a7a7a;
+}
+
+.card.highlight {
+  filter: brightness(1);
+}
+
+.card:nth-of-type(1) .image-container {
+  background-image: url("/img/Ф.Р-490\,\ Оп.3\,\ Д.52\,\ Л.1_Петр\ Иванович\ Сумин\ \(21.06.1946\,\ с.\ Верхняя\ Санарка\ Троицкого\ района\).\ Партийный\ и\ государственный\ деятель\,\ Губернатор\ Челябинской\ области\,\ 2004.png");
+}
+
+.card:nth-of-type(2) .image-container {
+  background-image: url("/img/Ф.П-3298\,\ Оп.4\,\ Д.15\,\ Л.24_Рапорт\ Челябинского\ ордена\ Ленина\ электрометаллургического\ комбината\ по\ итогам\ выполнения\ социалистических\ обязательств\ в\ честь\ 100-летия\ со\ дня\ рождения\ В.\ И.\ Ленина.\ Электродный\ завод\,\ 1935.jpg");
+}
+
+.card:nth-of-type(3) .image-container {
+  background-image: url("/img/Ф.П-695\,\ Оп.6\,\ Д.1562\,\ Л.1_Директор\ Козыревского\ среднего\ сельского\ профессионально-технического\ училища\ №\ 12\ В.\ Конобеев\ с\ учащимися\ на\ поле\ учебного\ хозяйства\,\ 08.1978.jpg");
+}
+.card:nth-of-type(4) .image-container {
+  background-image: url("/img/Ф.Р-1282\,\ Оп.5\,\ Д.91\,\ Л.1_Автомобиль\ КамАЗ\ централизованного\ отряда\ автотранспортников\ Южноуральска\ и\ Коркино\ на\ пробоотборнике\ Увельского\ элеватора.\ Вид\ 1\,\ 21.09.1983.jpg");
+}
+.card:nth-of-type(5) .image-container {
+  background-image: url("/img/Ф.Р-1212\,\ Оп.2\,\ Д.467\,\ Л.1_Фотографии\ Озерска\ и\ химкомбината\ «Маяк»\,\ подобранные\ В.В.\ Новоселовым\ для\ первого\ издания\ книги\ «Тайна\ «сороковки»\ .\ Пионеры\ –\ учащиеся\ школы\ №\ 22\,\ во\ время\ урока\,\ 1994.jpg");
+}
+.card:nth-of-type(6) .image-container {
+  background-image: url("/img/Ф.П-3298\,\ Оп.2\,\ Д.1302\,\ Л.1_Заведующая\ кафедрой\ госпитальной\ педиатрии\ Челябинского\ медицинского\ института\ профессор\ Н.\ С.\ Тюрина\ в\ реанимационном\ отделении\ детской\ городской\ больницы\,\ 1981.jpg");
+}
+.card:nth-of-type(7) .image-container {
+  background-image: url("/img/Ф.П-288К\,\ Оп.4\,\ Д.20\,\ Л.40_Альбом\ фотографий\ о\ строительстве\ и\ благоустройстве\ г.\ Челябинска.\ 1949\ год.\ Зрительный\ зал\ Дворца\ культуры\ им.\ С.\ Орджоникидзе\ на\ 850\ мест.\,\ 1949.jpg");
+}
+.card:nth-of-type(8) .image-container {
+  background-image: url("/img/Ф.П-695\,\ Оп.6\,\ Д.1562\,\ Л.1_Директор\ Козыревского\ среднего\ сельского\ профессионально-технического\ училища\ №\ 12\ В.\ Конобеев\ с\ учащимися\ на\ поле\ учебного\ хозяйства\,\ 08.1978.jpg");
+}
+.card:nth-of-type(9) .image-container {
+  background-image: url("/img/Ф.Р-1282\,\ Оп.8\,\ Д.583\,\ Л.4_Фоторепортаж\ «Мы\ и\ природа».\ Уникальное\ озеро\ Песчаное\ превращается\ в\ болото\,\ 18.08.1987.png");
+}
+
+.image-container {
+  width: 18em;
+  height: 18em;
+  position: relative;
+  background-size: cover;
+  margin-bottom: 2em;
+  border-radius: 100%;
+  padding: 1em;
+  -webkit-box-shadow: inset 0px 0px 17px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0px 0px 17px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 0px 17px 0px rgba(0, 0, 0, 0.3);
+}
+
+.image-container::after {
+  content: "";
+  display: block;
+  width: 120%;
+  height: 120%;
+  border: solid 3px rgba(0, 0, 0, 0.1);
+  border-radius: 100%;
+  position: absolute;
+  top: calc(-10% - 3px);
+  left: calc(-10% - 3px);
+}
+.image-container__name {
+  font-size: 24px;
+}
+
+.footer {
+  margin-left: 70px;
+  height: 100px;
+  background: rgb(53, 52, 50);
+  
+}
+.footer__text {
+  margin: 0;
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+  color: #cbcbcb;
+}
+
+.leader {
+  background-color: #f4f4f4;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.link {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+}
